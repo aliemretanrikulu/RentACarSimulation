@@ -75,12 +75,12 @@ public class CarRepository
             join color in colors on car.ColorId equals color.Id
             join transmission in transmissions on car.TransmissionId equals transmission.Id
             join fuel in fuels on car.FuelId equals fuel.Id
-            
+
             select new CarDetailDTO(
-                Id : car.Id,
+                Id: car.Id,
                 FuelName: fuel.Name,
-                TransmissionName: transmission.Name,
                 ColorName: color.Name,
+                TransmissionName: transmission.Name,
                 CarState: car.CarState,
                 KiloMeter: car.KiloMeter,
                 ModelYear: car.ModelYear,
@@ -88,7 +88,7 @@ public class CarRepository
                 BrandName: car.BrandName,
                 ModelName: car.ModelName,
                 DailyPrice: car.DailyPrice
-            );
+                );
 
         return result.ToList();
     }
